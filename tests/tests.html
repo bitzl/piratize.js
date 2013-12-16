@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mocha Tests</title>
+<link rel="stylesheet" href="mocha.css" />
+</head>
+<body>
+	<div id="mocha"></div>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/should.js"></script>
+	<script src="lib/expect.js"></script>
+	<script src="lib/mocha.js"></script>
+	<script>
+		mocha.setup('bdd');
+	</script>
+	<script src="../lib/underscore-min.js"></script>
+	<script src="../lib/underscore.string.min.js"></script>
+	<script type="text/javascript"> _.mixin(_.str.exports()); </script>
+	<script src="../js/piratize.js"></script>
+	<script src="test.piratize.js"></script>
+	<script>
+		mocha.checkLeaks();
+		mocha.globals([ 'jQuery' ]);
+		mocha.run();
+	</script>
+</body>
+</html>
